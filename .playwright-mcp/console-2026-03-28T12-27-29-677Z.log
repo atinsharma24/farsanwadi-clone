@@ -1,0 +1,4 @@
+[    2986ms] [ERROR] Failed to load resource: net::ERR_HTTP2_PROTOCOL_ERROR @ https://lightsalmon-partridge-701046.hostingersite.com/wp-content/uploads/elementor/google-fonts/fonts/sansita-qldlntrrpheb_-v7jkwuwx5-ww.woff2:0
+[    2986ms] [ERROR] Failed to load resource: net::ERR_HTTP2_PROTOCOL_ERROR @ https://lightsalmon-partridge-701046.hostingersite.com/wp-content/uploads/elementor/google-fonts/fonts/sansita-qldontrrpheb_-v7lb6xta.woff2:0
+[    2987ms] [ERROR] Failed to load resource: net::ERR_HTTP2_PROTOCOL_ERROR @ https://lightsalmon-partridge-701046.hostingersite.com/wp-content/uploads/elementor/google-fonts/fonts/baloo2-wxkre3ktposypryd51jcaa.woff2:0
+[    5664ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://farsanwadi.com/favicon.ico:0

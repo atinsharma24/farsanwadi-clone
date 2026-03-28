@@ -1,20 +1,34 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins, Montserrat, Sansita } from "next/font/google";
 import "./globals.css";
+import { CartProvider } from "@/lib/cart-context";
+import { CartNotification } from "@/components/CartNotification";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  display: "swap",
+});
+
+const sansita = Sansita({
+  variable: "--font-sansita",
+  subsets: ["latin"],
+  weight: ["400", "700", "800", "900"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Website Clone",
-  description: "Pixel-perfect website clone",
+  title: "Farsanwadi – Swaad Bhi, Sehat Bhi!",
+  description:
+    "Farsanwadi offers guilt-free, healthy Indian snacks — Khakhra, Chips, Bakarwadi, Namkeen and more. Pan India delivery. 100% Veg.",
 };
 
 export default function RootLayout({
@@ -25,9 +39,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${poppins.variable} ${montserrat.variable} ${sansita.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col bg-[#fffcfc] text-[#444444] font-poppins">
+        <CartProvider>
+          <CartNotification />
+          {children}
+        </CartProvider>
+      </body>
     </html>
   );
 }
