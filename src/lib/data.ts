@@ -16,7 +16,7 @@ export const products: Product[] = [
     originalPrice: 199,
     rating: 4.5,
     reviewCount: 98,
-    image: "/images/products/mini-khakhra-discovery.png",
+    image: "/images/products/mini-khakhra-discovery.jpg",
     category: "mini-khakhra",
     badge: "-15%",
     description:

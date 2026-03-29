@@ -72,13 +72,13 @@ export function SideCart() {
               <p className="text-sm text-muted-foreground mb-6">
                 Looks like you haven&apos;t added any items to your cart yet.
               </p>
-              <Button
+              <Link
+                href="/shop"
                 onClick={() => setIsOpen(false)}
-                className="bg-[#00a50c] hover:bg-[#0b8f3a] text-white px-6"
-                asChild
+                className="inline-flex items-center justify-center rounded-lg bg-[#00a50c] hover:bg-[#0b8f3a] text-white px-6 h-8 text-sm font-medium transition-colors"
               >
-                <Link href="/shop">Continue Shopping</Link>
-              </Button>
+                Continue Shopping
+              </Link>
             </div>
           ) : (
             /* Cart Items */
@@ -164,14 +164,13 @@ export function SideCart() {
             </p>
 
             {/* Checkout Button */}
-            <Button
-              asChild
-              className="w-full h-12 bg-[#e65100] hover:bg-[#d04a00] text-white font-semibold text-base"
+            <Link
+              href="/checkout"
+              onClick={() => setIsOpen(false)}
+              className="w-full h-12 flex items-center justify-center rounded-lg bg-[#e65100] hover:bg-[#d04a00] text-white font-semibold text-base transition-colors"
             >
-              <Link href="/checkout" onClick={() => setIsOpen(false)}>
-                Proceed to Checkout
-              </Link>
-            </Button>
+              Proceed to Checkout
+            </Link>
 
             {/* Continue Shopping Link */}
             <button
