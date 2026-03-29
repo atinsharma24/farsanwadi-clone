@@ -1,10 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Search, User, Menu, X, ShoppingCart } from "lucide-react";
+import { Search, User, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useCart } from "@/lib/cart-context";
+import { SideCart } from "@/components/SideCart";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -17,7 +17,6 @@ const navLinks = [
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const { itemCount } = useCart();
   const router = useRouter();
 
   const handleSearch = (e: React.FormEvent) => {
@@ -84,30 +83,12 @@ export function Header() {
             </button>
           </form>
 
-          <Link
-            href="/cart"
-            className="p-2 text-[#444] hover:text-[#00a50c] transition-colors relative"
-            aria-label="Cart"
-          >
-            <ShoppingCart size={22} />
-            <span className="absolute -top-1 -right-1 bg-[#e65100] text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
-              {itemCount}
-            </span>
-          </Link>
+          <SideCart />
         </div>
 
         {/* Mobile: Cart + Menu toggle */}
         <div className="md:hidden flex items-center gap-2">
-          <Link
-            href="/cart"
-            className="p-2 text-[#444] relative"
-            aria-label="Cart"
-          >
-            <ShoppingCart size={22} />
-            <span className="absolute -top-1 -right-1 bg-[#e65100] text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
-              {itemCount}
-            </span>
-          </Link>
+          <SideCart />
           <button
             className="p-2 text-[#444]"
             onClick={() => setMobileOpen(!mobileOpen)}
